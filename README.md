@@ -60,7 +60,7 @@
 
 
 🔖 ***GET /streams***
-
+===
 
 
 | API | GET https://api.twitch.tv/helix/streams |
@@ -109,10 +109,10 @@
 
 ### 속도 제한
 
-<aside>
-🔖 분당 800회
 
-</aside>
+🔖 ***분당 800회***
+
+
 
 | Authentication | Refill Rate | Bucket Size |
 | :--- | :--- | :--- |
@@ -130,10 +130,9 @@
 
 ### 사용하고자 하는 Twitch Interface
 
-<aside>
-🔖 **Chatbots**
 
-</aside>
+🔖 ***Chatbots***
+===
 
 | 기능 | user access token, 원하는 스트리머의 채널 이름을 Twitch irc서버에 제공하면 해당 채널 채팅방에 챗봇을 참여시켜서 채팅 메시지를 주고받을 수 있다. |
 | :--- | :--- |
@@ -145,7 +144,7 @@
 
 
 🔖 ***TCP 방식 채택***
-
+===
 
 |  | TCP | WebSocket |
 | :--- | :--- | :--- |
@@ -158,10 +157,10 @@ Python의 socket 모듈을 사용하여 간편하게 구현 가능하기 때문�
 
 ### 속도 제한
 
-<aside>
-🔖 30초당 메시지 20개
 
-</aside>
+🔖 ***30초당 메시지 20개***
+
+
 
 | 한계 | 설명 |
 | :--- | :--- |
@@ -233,10 +232,9 @@ Python의 socket 모듈을 사용하여 간편하게 구현 가능하기 때문�
 
 트위치 서버에서 부여받을 수 있는 토큰은 두 종류가 있다.
 
-<aside>
-🔖 user access token 채택
 
-</aside>
+🔖 ***user access token 채택***
+===
 
 |  | user access token | app access token |
 | :--- | :--- | :--- |
@@ -248,10 +246,9 @@ Python의 socket 모듈을 사용하여 간편하게 구현 가능하기 때문�
 
 ### ⚔️ user access token 토큰 부여 방법
 
-<aside>
-🔖 Authorization code grant flow 채택
 
-</aside>
+🔖 ***Authorization code grant flow 채택***
+===
 
 |  | Authorization code grant flow | Implicit grant flow |
 | :--- | :--- | :--- |
@@ -265,10 +262,9 @@ Python의 socket 모듈을 사용하여 간편하게 구현 가능하기 때문�
 
 ### 토큰 유효 기간
 
-<aside>
-🔖 4시간
 
-</aside>
+🔖 ***4시간***
+
 
 </br>
 </br>
@@ -279,10 +275,9 @@ Python의 socket 모듈을 사용하여 간편하게 구현 가능하기 때문�
 
 ### ⚔️ Tableau vs Plotly
 
-<aside>
-🔖 **Plotly 사용**
 
-</aside>
+🔖 ***Plotly 사용***
+===
 
 |  | Tableau | Plotly |
 | :--- | :--- | :--- |
@@ -305,10 +300,9 @@ Python으로 데이터 시각화를 비용 없이 간단하게 할 수 있어 �
 2. 프로젝트를 처음 진행할 당시에 데이터 플랫폼 서버에 Kafka는 설치가 안 되어 있었다.
 3. 데이터 손실이 없는 안정성이 높은 방법이 필요하다.
 
-<aside>
-🔖 **Kafka를 사용**
 
-</aside>
+🔖 ***Kafka를 사용***
+===
 
 |  | Kafka를 사용 | API server를 사용 | 컨테이너 내의 로컬에 저장 |
 | --- | --- | --- | --- |
