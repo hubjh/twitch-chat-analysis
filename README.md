@@ -19,7 +19,7 @@
 ## **결과의 의미**
 
 |  | 개인 | 팀 |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | 얻은 것 | 이전의 파이프라인보다 많은 천만 단위의 데이터를 수집했다 | 데이터 플랫폼 서버의 테스트를 위한 데이터 파이프라인을 추가 |
 
 # ✎ 프로젝트 배경
@@ -56,7 +56,7 @@
 
 
 | API | GET https://api.twitch.tv/helix/streams |
-| --- | --- |
+| :--- | :--- |
 | 기능 | 모든 방송의 목록을 가져온다. 요청 파라미터를 통해서 응답 값을 필터링이 가능하다. |
 | 필요한 것 | 해당 api를 사용하려면 user access token 또는 app access token이 필요하다. |
 
@@ -105,12 +105,11 @@
 </aside>
 
 | Authentication | Refill Rate | Bucket Size |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | Bearer token is provided | 800 points per minute, per user | 800 points |
 
 # ****Twitch Chat & Chatbots****
 
----
 
 ### ※ **Twitch는 챗봇**이 WebSocket 또는 TCP 연결을 사용하여 **Twitch 채팅방에 연결할 수 있는 인터넷 릴레이 채팅(IRC) 인터페이스를 제공**된다. 연결되면 **봇은 채팅 메시지를 보내고 받을 수 있다.**
 
@@ -132,7 +131,7 @@
 
 
 |  | TCP | WebSocket |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | 사용 유무 |  O | X |
 | 이유 | Python의 표준 라이브러리인 socket 모듈을 사용하여 간편하게 구현 가능| Python의 표준 라이브러리인 socket 모듈로는 WebSocket을 직접 처리할 수 없다. 별도의 라이브러리나 프레임워크를 사용해야 한다. |
 
@@ -146,7 +145,7 @@ Python의 socket 모듈을 사용하여 간편하게 구현 가능하기 때문�
 </aside>
 
 | 한계 | 설명 |
-| --- | --- |
+| :--- | :--- |
 | 30초당 메시지 20개 | 사용자가 채널의 브로드캐스터 또는 중재자가 아닌 경우 봇은 30초당 최대 20개의 메시지를 보낼 수 있습니다. |
 | 30초당 메시지 100개 | 사용자가 채널의 브로드캐스터 또는 중재자인 경우 봇은 30초당 최대 100개의 메시지를 보낼 수 있습니다. |
 | 30초당 7,500개의 메시지 | 봇은 모든 채널에서 30초당 7,500개의 메시지를 보내는 것으로 제한됩니다. 이는 봇이 30초당 10개의 메시지를 750개의 서로 다른 채널로 보낼 수 있음을 의미합니다. 그러나 예를 들어 30초당 20개 메시지 제한을 초과하기 때문에 단일 채널에 30초당 7,500개 메시지를 보낼 수 없습니다. |
@@ -179,17 +178,15 @@ Python의 socket 모듈을 사용하여 간편하게 구현 가능하기 때문�
 # Ex)
 
 **2023-04-31 T14:00:00** 챗봇이 가져온 메시지
-`:lovingt3s!lovingt3s@lovingt3s.tmi.twitch.tv PRIVMSG #lovingt3s :!dilly/r/n`
+</br>`:lovingt3s!lovingt3s@lovingt3s.tmi.twitch.tv PRIVMSG #lovingt3s :!dilly/r/n`
 
 **2023-04-31 T14:00:01** 챗봇이 가져온 메시지
-
-`:catfish99!catfish99@catfish99.tmi.twitch.tv PRIVMSG #lovingt3s :Meow/r/n`</br>`:abcdef!abcdef@abcdef.tmi.twitch.tv PRIVMSG #abcdef :ㅋㅋㅋㅋ/r/n`</br>`:sandwich33@sandwich33.tmi.twitch.tv PRIVMSG #lovingt3s :happy/r/n`
+</br>`:catfish99!catfish99@catfish99.tmi.twitch.tv PRIVMSG #lovingt3s :Meow/r/n`</br>`:abcdef!abcdef@abcdef.tmi.twitch.tv PRIVMSG #abcdef :ㅋㅋㅋㅋ/r/n`</br>`:sandwich33@sandwich33.tmi.twitch.tv PRIVMSG #lovingt3s :happy/r/n`
 
 수집되는 채팅의 시간대가 겹치는 경우 개행문자`/r/n`를 통해 메시지를 구분한 문자열을 받게 된다.
 
 # ****OAuth Access Tokens****
 
----
 
 ### ※ **토큰은 영원하지 않다.**
 
@@ -212,7 +209,7 @@ Python의 socket 모듈을 사용하여 간편하게 구현 가능하기 때문�
 </aside>
 
 |  | user access token | app access token |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | 특징 | 유저의 민감한 데이터에 액세스할 수 있다. | 유저의 민감하지 않은 데이터에만 액세스할 수 있다. |
 
 프로젝트에서 핵심적으로 사용될 Twitch Chatbot를 사용하기 위해 user access token이 필요했다.
@@ -225,7 +222,7 @@ Python의 socket 모듈을 사용하여 간편하게 구현 가능하기 때문�
 </aside>
 
 |  | Authorization code grant flow | Implicit grant flow |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | 설명 | 앱이 서버를 사용하고, 클라이언트 암호를 안전하게 저장할 수 있고, Twitch API에 서버 간 요청을 할 수 있는 경우 이 흐름을 사용하세요. | 앱이 서버를 사용하지 않는 경우 이 흐름을 사용합니다. 예를 들어 앱이 클라이언트 측 JavaScript 앱 또는 모바일 앱인 경우 이 흐름을 사용합니다. |
 | 토큰 유효 기간 | 4시간 | 60일 |
 | refresh token</br>(토큰 새로고침 유무) | O | X |
@@ -241,7 +238,7 @@ Python의 socket 모듈을 사용하여 간편하게 구현 가능하기 때문�
 
 # 시각화
 
----
+
 
 ### ⚔️ Tableau vs Plotly
 
@@ -251,18 +248,18 @@ Python의 socket 모듈을 사용하여 간편하게 구현 가능하기 때문�
 </aside>
 
 |  | Tableau | Plotly |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | 비용 | 발생 | 없음 |
 
 Python으로 데이터 시각화를 비용 없이 간단하게 할 수 있어 선택했다.
 
 # Kafka
 
-### ⚔️ Kafka를 사용해서 채팅 로그를 적재하는 이유
+## ⚔️ Kafka를 사용해서 채팅 로그를 적재하는 이유
 
 ### 배경
 
----
+
 
 1. 챗봇이 가져오는 메시지를 저장하는 방법이 필요하다.
 2. 프로젝트를 처음 진행할 당시에 데이터 플랫폼 서버에 Kafka는 설치가 안 되어 있었다.
@@ -283,7 +280,7 @@ Python으로 데이터 시각화를 비용 없이 간단하게 할 수 있어 �
 
 # 프로그램 기능
 
----
+
 
 | 기능 목록 | 배경 | 목적 | 조건 |
 | --- | --- | --- | --- |
